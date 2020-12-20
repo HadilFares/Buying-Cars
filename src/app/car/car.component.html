@@ -1,0 +1,9 @@
+<p>car works!</p>
+<router-outlet></router-outlet>
+<div style="display: flex; justify-content: space-around;">
+    <div *ngFor="let c of tabcars">
+            <h4> Nom du voiture:{{c.carname}}</h4>
+            <img [src]='c.carimage'><br>
+    </div>
+    
+</div>
