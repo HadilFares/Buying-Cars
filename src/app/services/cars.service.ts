@@ -18,5 +18,24 @@ export class CarsService {
      if (this.cars[i].id==id)
      return this.cars[i];
   }
+  addcar (c)
+  {
+    c.id=(this.cars.length)+1
+    this.cars.push(c);
+  }
+  deletecar(c){
+    var x =this.cars.indexOf(c);
+    this.cars.splice(x,1);
+  }
+} modifycar (id:number ,n:string,d:string,p:any,b:string,y:string)
+{
+  for (let i=0;i<this.cars.length;i++)
+  if (this.cars[i].id==id){
+    this.cars[i].name=n;
+    this.cars[i].description=d;
+    this.cars[i].price=p;
+    this.cars[i].year=y;
+  }
+  return ;
+  }
 }
-
