@@ -27,7 +27,7 @@ export class CarsService {
     var x =this.cars.indexOf(c);
     this.cars.splice(x,1);
   }
-} modifycar (id:number ,n:string,d:string,p:any,b:string,y:string)
+}/* modifycar (id:number ,n:string,d:string,p:any,b:string,y:string)
 {
   for (let i=0;i<this.cars.length;i++)
   if (this.cars[i].id==id){
@@ -38,4 +38,5 @@ export class CarsService {
   }
   return ;
   }
-}
+}*/
+
