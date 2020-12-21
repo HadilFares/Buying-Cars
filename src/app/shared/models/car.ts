@@ -3,6 +3,7 @@ export class Car {
     name?:string;
     brand?:string;
     price?:any;
+    image?:string;
     year?:string;
     description?:string;
     constructor (args: Car={}){

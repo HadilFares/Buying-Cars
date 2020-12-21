@@ -6,10 +6,8 @@ import { DetailCarComponent } from './detail-car/detail-car.component';
 import { ListCarsComponent } from './list-cars/list-cars.component';
 
 const routes: Routes = [
-  {path :'car',component:CarComponent},
+  {path :'',component:CarComponent},
   {path :'car/:id',component:DetailCarComponent},
-  {path :'home',component:ListCarsComponent},
-  {path:'addcar',component:AddCarComponent},
 
 ];
 

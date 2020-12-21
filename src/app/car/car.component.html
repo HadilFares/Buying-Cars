@@ -1,15 +1,17 @@
-<div class="page">
-    <router-outlet></router-outlet>
 <div class="row">
-    <div *ngFor="let c of tabcars" class="col-md-3">
+    <div *ngFor="let c of tabcars" class="col-md-4">
         <div class="card m-1">
             <div class="card-body">
-                
-                <h4>{{c.carname}}</h4>
-                <img class="car-img" [src]='c.carimage'><br>
-                <button class ="btn btn-primary" routerLink="/detail">Plus d'informations</button>
+                <h3 class="card-title">{{c.name}}</h3>
+                <img class="car-img" [src]='c.image'><br>
+            </div>
+            <div class="card-footer">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        <a class="btn btn-primary" [routerLink]="['/car',c.id]">Plus d'informations</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

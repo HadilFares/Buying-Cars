@@ -13,13 +13,13 @@ export class AddCarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addcars(name,brand,price,description){
+  adds(name,brand,price,description){
     var x=new Car ();
     x.name=name;
     x.brand=brand;
     x.price=price;
     x.description=description;
-    this.carsService.addcar(x);
+    this.carsService.add(x);
     
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CARS } from '../shared/models/des-cars';
 
 @Component({
   selector: 'app-car',
@@ -6,20 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-  tabcars =[
-    {
-      carname:'Mercedes',
-      carimage:"assets/cars/voiture.jpg"
-    },
-    {
-      carname:'Kia Sportage',
-      carimage:"assets/cars/voiture1.png"
-    },
-    {
-      carname:'Audi',
-      carimage:"assets/cars/voiture2.jpg"
-    }
-  ];
+  tabcars =CARS
 
   constructor() { }
 
