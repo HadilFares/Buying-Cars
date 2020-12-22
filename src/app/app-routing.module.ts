@@ -10,8 +10,8 @@ const routes: Routes = [
   {path :'',component:CarComponent},
   {path :'car/:id',component:DetailCarComponent},
   {path :'admin',component:ListCarsComponent},
-  {path :'add',component:AddCarComponent},
-  {path :'update',component:ModifyCarComponent}
+  {path :'admin/add',component:AddCarComponent},
+  {path :'admin/update/:id',component:ModifyCarComponent}
 
 ];
 
