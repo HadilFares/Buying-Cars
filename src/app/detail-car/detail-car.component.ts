@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { throwError } from 'rxjs';
 import { CarsService } from '../services/cars.service';
 @Component({
   selector: 'app-detail-car',
@@ -21,7 +22,7 @@ export class DetailCarComponent implements OnInit {
     this.priceCar = this.carsService.getCarById(+id).price;
     this.yearCar = this.carsService.getCarById(+id).year;
     this.descCar = this.carsService.getCarById(+id).description;
-
+    
   }
 
 }

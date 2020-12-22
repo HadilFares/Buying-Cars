@@ -13,5 +13,8 @@ export class ListCarsComponent implements OnInit {
   ngOnInit(): void {
     this.tabcars=this.carsService.getCars();
   }
+  remove(c){
+    this.carsService.remove(c);
+  }
 
 }

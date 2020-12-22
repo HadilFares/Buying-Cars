@@ -8,18 +8,20 @@ import { Car } from '../shared/models/car';
   styleUrls: ['./add-car.component.css']
 })
 export class AddCarComponent implements OnInit {
+  
 
   constructor(private carsService :CarsService) { }
 
   ngOnInit(): void {
   }
-  adds(name,brand,price,description){
+  add(name,brand,price,description){
     var x=new Car ();
     x.name=name;
     x.brand=brand;
     x.price=price;
     x.description=description;
     this.carsService.add(x);
+    
     
   }
 
