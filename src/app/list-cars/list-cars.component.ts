@@ -7,13 +7,13 @@ import { Car } from '../shared/models/car';
   styleUrls: ['./list-cars.component.css']
 })
 export class ListCarsComponent implements OnInit {
- tabcars :Car [] =null;
-  constructor(private carsService :CarsService) { }
+  tabcars: Car[] = null;
+  constructor(private carsService: CarsService) { }
 
   ngOnInit(): void {
-    this.tabcars=this.carsService.getCars();
+    this.tabcars = this.carsService.getCars();
   }
-  remove(c){
+  remove(c) {
     this.carsService.remove(c);
   }
 
