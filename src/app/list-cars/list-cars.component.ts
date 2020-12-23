@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../services/cars.service';
 import { Car } from '../shared/models/car';
+import {Router} from '@angular/router'
+import { identifierModuleUrl } from '@angular/compiler';
 @Component({
   selector: 'app-list-cars',
   templateUrl: './list-cars.component.html',
@@ -8,7 +10,7 @@ import { Car } from '../shared/models/car';
 })
 export class ListCarsComponent implements OnInit {
   tabcars: Car[] = null;
-  constructor(private carsService: CarsService) { }
+  constructor(private carsService: CarsService ,private router :Router) { }
 
   ngOnInit(): void {
     this.tabcars = this.carsService.getCars();
@@ -16,5 +18,6 @@ export class ListCarsComponent implements OnInit {
   remove(c) {
     this.carsService.remove(c);
   }
-
+  
+  
 }

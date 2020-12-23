@@ -10,6 +10,7 @@ import { ListCarsComponent } from './list-cars/list-cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ModifyCarComponent } from './modify-car/modify-car.component';
 import { FormsModule } from './forms/forms.module';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule } from './forms/forms.module';
     NavMenuComponent,
     ListCarsComponent,
     AddCarComponent,
-    ModifyCarComponent
+    ModifyCarComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
