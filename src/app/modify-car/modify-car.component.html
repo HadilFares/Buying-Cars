@@ -1,33 +1,35 @@
-<form (ngSubmit) ="soumettre(f)" #f="ngForm">
-<div class="col-md-4">
-    <label for="exampleFormControlInput1" class="form-label">Car Name</label>
-    <input type="text"  [(ngModel)] ="CarName" name="CarName" class="form-control" id="exampleFormControlInput1" >
-  </div>
-  <div class="col-md-4">
-    <label for="exampleFormControlInput1" class="form-label">Brand</label>
-    <input type="texte" [(ngModel)]="BrandCar" name="BrandCar" class="form-control" id="exampleFormControlInput1" >
-  </div>
-  <label for="exampleFormControlInput1" class="form-label">Year</label>
-  <div class="form-floating">
-    <select class="form-select" class="col-md-4" id="floatingSelect" aria-label="Floating label select example">
-      <option selected>Open this select menu</option>
-      <option value="2">2016</option>
-      <option value="3">2017</option>
-      <option value="1">2018</option>
-      <option value="2">2019</option>
-      <option value="3">2020</option>
-      <option value="2">2021</option>
-      <option value="3">2022</option>
-    </select>
-  </div>
-  <div class="col-md-4">
-    <label for="exampleFormControlTextarea1" class="form-label">description</label>
-    <textarea class="form-control"  [(ngModel)]="Cardesc" name="Cardesc" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <div class="col-md-4">
-    <label for="exampleFormControlInput1" class="form-label">Price</label>
-    <input type="texte" [(ngModel)]="CarPrice" name="CarPrice" class="form-control" id="exampleFormControlInput1" >
-  </div> <br>
-
-  <button type="button" class="btn btn-primary" >Update</button>
+<div class="row">
+  <form (ngSubmit)="soumettre(f)" #f="ngForm">
+    <div class="col-md-4">
+      <label for="exampleFormControlInput1" class="form-label">Car Name</label>
+      <input type="text" [(ngModel)]="CarName" name="CarName" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <div class="col-md-4">
+      <label for="exampleFormControlInput1" class="form-label">Brand</label>
+      <input type="texte" [(ngModel)]="BrandCar" name="BrandCar" class="form-control" id="exampleFormControlInput1">
+    </div>
+    <label for="exampleFormControlInput1" class="form-label">Year</label>
+    <div class="form-floating">
+      <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+        <option selected>Open this select menu</option>
+        <option value="2">2016</option>
+        <option value="3">2017</option>
+        <option value="1">2018</option>
+        <option value="2">2019</option>
+        <option value="3">2020</option>
+        <option value="2">2021</option>
+        <option value="3">2022</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="exampleFormControlTextarea1" class="form-label">description</label>
+      <textarea class="form-control" [(ngModel)]="Cardesc" name="Cardesc" id="exampleFormControlTextarea1"
+        rows="3"></textarea>
+    </div>
+    <div class="col-md-4">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input type="texte" [(ngModel)]="CarPrice" name="CarPrice" class="form-control" id="exampleFormControlInput1">
+    </div> <br>
+    <button type="button" class="btn btn-primary">Update</button>
   </form>
+</div>
