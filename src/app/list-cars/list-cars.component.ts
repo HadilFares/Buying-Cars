@@ -10,13 +10,19 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class ListCarsComponent implements OnInit {
   tabcars: Car[] = null;
-  constructor(private carsService: CarsService ,private router :Router) { }
+  constructor(private carsService: CarsService ,private router :Router) { 
+  }
 
   ngOnInit(): void {
-    this.tabcars = this.carsService.getCars();
+    this._getCars();
+  }
+  _getCars(){
+    this.carsService.getCars(e=>{
+      this.tabcars = e;
+    });
   }
   remove(c) {
-    this.carsService.remove(c);
+    this.carsService.remove(c,this._getCars.bind(this));
   }
   
   
