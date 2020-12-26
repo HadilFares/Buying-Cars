@@ -10,6 +10,7 @@ import { ListCarsComponent } from './list-cars/list-cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ModifyCarComponent } from './modify-car/modify-car.component';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AuthComponent } from './auth/auth.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [CarsService],
   bootstrap: [AppComponent]
