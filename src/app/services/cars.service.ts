@@ -9,8 +9,7 @@ export class CarsService {
   cars: Car[] = CARS;
 
   constructor() { }
-  remove (c: Car)
- /* getCars(): Car[] {
+  getCars(): Car[] {
     return this.cars;
   }
   getCarById(id: number): Car {
@@ -37,7 +36,5 @@ export class CarsService {
       year
     }
   }
-  */
-
 }
 
