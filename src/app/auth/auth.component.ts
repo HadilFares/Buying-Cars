@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(private c:AuthService) { }
 
   ngOnInit(): void {
   }
-
+   seconnecter(l,m){
+     this.c.seconnecter(l,m);
+   }
 }

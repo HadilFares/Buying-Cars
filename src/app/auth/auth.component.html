@@ -1,1 +1,21 @@
-<p>auth works!</p>
+<!--<div class="contenu">
+    <h1>Connexion</h1>
+    <label>LOGIN</label> <input  type="text" #login><br>
+    <label>MOT DE PASSE </label> <input type="password" #mdp><br>
+    <button (click)="seconnecter(login.value,mdp.value)"> se connecter </button>
+    </div>
+--> 
+<form class="row g-3">
+    <label>Login :</label>
+    <div class="col-auto">
+        <input type="text"  #login class="form-control" >
+      </div>
+    <label>Password:</label>
+    <div class="col-auto">
+      <label for="inputPassword2" class="visually-hidden">Password</label>
+      <input type="password" #mdp class="form-control" id="inputPassword2">
+    </div>
+    <div class="col-auto">
+      <button  (click)="seconnecter(login.value,mdp.value) " type="submit" class="btn btn-primary mb-3">Connect</button>
+    </div>
+  </form>

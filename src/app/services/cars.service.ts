@@ -24,9 +24,13 @@ export class CarsService {
   remove(c: Car, cb) {
     this.http.post('http://localhost:8080/cars/delete/' + c._id, {}).subscribe(cb);
   }
-  update(_id: number, info) {
+  update(_id, info ,cb) {
+    this.http.post('http://localhost:8080/cars/update'+ _id ,info).subscribe(cb);
+    
+    }
   }
 
 
-}
+
+
 
