@@ -15,7 +15,7 @@ import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     CarComponent,
     DetailCarComponent,
     NavMenuComponent,
