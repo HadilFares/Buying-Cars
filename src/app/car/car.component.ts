@@ -7,13 +7,13 @@ import { CarsService } from '../services/cars.service';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-  tabcars =[]
+  tabcars = []
 
   constructor(private carsService: CarsService) { }
 
   ngOnInit(): void {
-    this.carsService.getCars(e=>{
-      this.tabcars = e;
+    this.carsService.getCars(e => {
+      this.tabcars = e.map(e => ({ ...e, image: `/api/images/${e.image}` }));
     });
   }
 

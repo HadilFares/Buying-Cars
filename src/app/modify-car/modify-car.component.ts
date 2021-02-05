@@ -10,17 +10,26 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./modify-car.component.css']
 })
 export class ModifyCarComponent implements OnInit {
-  id: number;
-  CarName: string;
-  BrandCar: string;
-  Cardesc: string;
-  CarPrice: any;
-  year: string;
+  public name;
+  public brand;
+  public description;
+  public price;
+  public year;
   constructor(private route: ActivatedRoute, private carsService: CarsService) { }
 
   ngOnInit(): void {
+    this.carsService.getCarById(this.route.snapshot.params.id, (car) => {
+      const { name, brand, description, price, year } = car || {};
+      this.name = name;
+      this.brand = brand;
+      this.description = description;
+      this.price = price;
+      this.year = year;
+    })
   }
   soumettre(f: NgForm) {
+    const { name, brand, description, price, year } = this;
+    this.carsService.update(this.route.snapshot.params.id, { name, brand, description, price, year })
   }
 
 

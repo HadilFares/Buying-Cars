@@ -12,8 +12,8 @@ export class DetailCarComponent implements OnInit {
   constructor(private route: ActivatedRoute, private carsService: CarsService) { }
 
   ngOnInit(): void {
-    this.carsService.getCarById(this.route.snapshot.params.id,(car)=>{
-      this.car = car;
+    this.carsService.getCarById(this.route.snapshot.params.id, (car) => {
+      this.car = { ...car, image: `/api/images/${car.image}` };
     })
   }
 

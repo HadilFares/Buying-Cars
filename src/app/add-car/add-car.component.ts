@@ -16,6 +16,8 @@ export class AddCarComponent implements OnInit {
   public description;
   public price;
   public year;
+  private image;
+  public loading = false;
   constructor(private carsService: CarsService) { }
 
   ngOnInit(): void {
@@ -23,10 +25,18 @@ export class AddCarComponent implements OnInit {
     this.brand = "";
     this.description = "";
     this.price = null;
-    this.year = "";
+    this.year = "please-select";
+  }
+  handleFileInput(files: FileList) {
+    this.image = files.item(0);
+    this.loading = true;
+    this.carsService.uploadFile(this.image, ({ name }) => {
+      this.image = name;
+      this.loading = false;
+    })
   }
   soumettre(f: NgForm) {
-    const { name, brand, description, price, year } = this;
-    this.carsService.add({ name, brand, description, price, year });
+    const { name, brand, description, price, year, image } = this;
+    this.carsService.add({ name, brand, description, price, year, image });
   }
 }
