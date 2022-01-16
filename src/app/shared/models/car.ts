@@ -1,5 +1,5 @@
 export class Car {
-    _id?:number;
+    _id?:number; 
     name?:string;
     brand?:string;
     price?:any;

@@ -8,13 +8,13 @@ import { CarsService } from '../services/cars.service';
   styleUrls: ['./detail-car.component.css']
 })
 export class DetailCarComponent implements OnInit {
-  public car;
-  constructor(private route: ActivatedRoute, private carsService: CarsService) { }
+  public car; 
+  constructor(private route: ActivatedRoute, private carsService: CarsService) { } 
 
-  ngOnInit(): void {
-    this.carsService.getCarById(this.route.snapshot.params.id, (car) => {
-      this.car = { ...car, image: `/api/images/${car.image}` };
-    })
-  }
+  ngOnInit(): void { 
+    this.carsService.getCarById(this.route.snapshot.params.id, (car) => { 
+      this.car = { ...car, image: `/api/images/${car.image}` }; 
+    }) 
+  } 
 
-}
+} 

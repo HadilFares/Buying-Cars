@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CarsService } from '../services/cars.service';
 import { Car } from '../shared/models/car';
-import { NgForm } from '@angular/forms';
-
+import { FormGroup, FormControl,} from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-car',
@@ -11,6 +12,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AddCarComponent implements OnInit {
 
+  public AddForm: FormGroup;
   public name;
   public brand;
   public description;
@@ -18,14 +20,17 @@ export class AddCarComponent implements OnInit {
   public year;
   private image;
   public loading = false;
-  constructor(private carsService: CarsService) { }
+  constructor(private carsService: CarsService, fb :FormBuilder) { }
 
   ngOnInit(): void {
-    this.name = "";
-    this.brand = "";
-    this.description = "";
-    this.price = null;
-    this.year = "please-select";
+    this.AddForm = new FormGroup ({
+
+    name :new FormControl('',Validators.required),
+    brand   :new FormControl('',Validators.required),
+    description   :new FormControl('',Validators.required),
+    price  :new FormControl('',Validators.required),
+    year  :new FormControl('',Validators.required)
+  })
   }
   handleFileInput(files: FileList) {
     this.image = files.item(0);
@@ -35,8 +40,7 @@ export class AddCarComponent implements OnInit {
       this.loading = false;
     })
   }
-  soumettre(f: NgForm) {
-    const { name, brand, description, price, year, image } = this;
-    this.carsService.add({ name, brand, description, price, year, image });
+  onSubmit (){
+    console.warn(this.AddForm.value);
   }
 }

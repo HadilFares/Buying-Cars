@@ -4,19 +4,21 @@
             <div class="card-header">
                 <div class="card-title">Add Car</div>
             </div>
-            <form (ngSubmit)="soumettre(f)" #f="ngForm">
+            <form [formGroup]="AddForm" (ngSubmit)="onSubmit()">
                 <div class="card-body">
                     <div class="form-group mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Car Name:</label>
-                        <input type="text" [(ngModel)]="name" name="name" class="form-control" id="name">
+                        <input type="text" formControlName="name" name="name" class="form-control"  >
+                        <small *ngIf="name.invalid && name.touched" class="text-danger">Name is Required</small> 
                     </div>
                     <div class="form-group mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Brand:</label>
-                        <input type="text" [(ngModel)]="brand" name="brand" class="form-control" id="brand">
+                        <input type="text" formControlName="brand" name="brand" class="form-control" >
+                        <small *ngIf="brand.invalid && brand.touched" class="text-danger">Brand is Required</small> 
                     </div>
                     <div class="form-group mb-3">
-                        <label for="year" class="form-label">Year:</label>
-                        <select class="form-select" [(ngModel)]="year" name="year" id="year">
+                        <label for="year" class="form-label" >Year:</label>
+                        <select class="form-select" required [(ngModel)]="year" name="year" id="year">
                             <option value="please-select" selected>Select Year</option>
                             <option value="2016">2016</option>
                             <option value="2017">2017</option>
@@ -29,18 +31,19 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="description" class="form-label">Description:</label>
-                        <textarea class="form-control" [(ngModel)]="description" name="description"
-                            id="description" rows="3"></textarea>
+                        <textarea class="form-control" formControlName="description" [ngclass]="{'is-invalid':form.get('description').touched && form.get('description').invalid}" name="description" rows="3" ></textarea>
+                        <div>Description is required</div>
+                           
                     </div>
                     <div class="from-group mb-3">
                         <label for="price" class="form-label">Price:</label>
-                        <input type="number" [(ngModel)]="price" name="price" class="form-control"
-                            id="price">
+                        <input type="number" formControlName="price" *ngIf="price.invalid &&price.touched"  name="price" class="form-control"
+                >
                     </div>
                     <div class="from-group">
                         <label for="" class="form-label">Image:</label>
                         <input type="file" (change)="handleFileInput($event.target.files)" name="image"
-                            accept="image/x-png,image/gif,image/jpeg" id="image" class="form-control">
+                            accept="image/x-png,image/gif,image/jpeg"  class="form-control" required>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -49,8 +52,8 @@
                             <a [routerLink]="['/admin']" class="btn btn-light">Cancel</a>
                         </div>
                         <div class="col-auto">
-                            <button type="button" [disabled]="loading" class="btn btn-primary"
-                                type="submit">Add</button>
+                            <button type="submit" [disabled]="!AddForm.valid" class="btn btn-primary"
+                               >Add</button>
                         </div>
                     </div>
                 </div>
@@ -58,4 +61,4 @@
 
         </div>
     </div>
-</div>
+</div> 
